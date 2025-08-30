@@ -186,6 +186,9 @@
         };
     };
 
+    macros {
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -300,8 +303,6 @@
 &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans    &trans    &trans    &trans
 &trans  &trans  &trans  &trans  &trans  &trans            &trans  &trans                                &trans
             >;
-
-            sensor-bindings = <&scroll_up_down>;
         };
     };
 };
