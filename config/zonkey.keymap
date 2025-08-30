@@ -37,7 +37,66 @@
 
 / {
     behaviors {
-        combos { compatible = "zmk,combos"; };
+        combos {
+            compatible = "zmk,combos";
+                CoMBL {
+            bindings = <&mkp LCLK>;
+            key-positions = <18 19>;
+            layers = <0>;
+            };
+
+            CoMBR {
+                bindings = <&mkp RCLK>;
+                key-positions = <19 20>;
+                layers = <0>;
+            };
+
+            CoMB4 {
+                bindings = <&mkp MB4>;
+                key-positions = <6 7>;
+                layers = <0>;
+            };
+
+            CoMB5 {
+                bindings = <&mkp MB5>;
+                key-positions = <7 8>;
+                layers = <0>;
+            };
+
+            CoEsc {
+                bindings = <&kp ESC>;
+                key-positions = <0 1>;
+                layers = <0>;
+            };
+
+            CoGrave {
+                bindings = <&kp GRAVE>;
+                key-positions = <13 12>;
+                layers = <0>;
+            };
+
+            CoTab {
+                bindings = <&kp TAB>;
+                key-positions = <10 11>;
+                layers = <0>;
+            };
+
+            CoLang1 {
+                bindings = <&kp LANG1>;
+                key-positions = <3 2>;
+                layers = <0>;
+            };
+
+            CoLang2 {
+                bindings = <&kp LANG2>;
+                key-positions = <26 25>;
+            };
+
+            CoRKH {
+                bindings = <&tdRkh>;
+                key-positions = <13 14>;
+            };
+        };
 
         mo2: mo2 {
             compatible = "zmk,behavior-mod-morph";
@@ -157,6 +216,58 @@
             bindings = <&kp JP_BSLH>, <&kp JP_UNDERSCORE>;
 
             mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        moSlash: moSlash {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp KP_SLASH>, <&kp INT_YEN>;
+
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            label = "MOSLASH";
+        };
+
+        moExQu: moExQu {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp LS(N1)>, <&kp LS(SLASH)>;
+
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            label = "MOEXQU";
+        };
+
+        moColon: moColon {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp SEMI>, <&kp SQT>;
+
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            label = "MOCOLON";
+        };
+
+        moQote: moQote {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp LS(N2)>, <&kp LS(SQT)>;
+
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            label = "MOQOTE";
+        };
+
+        moHyphen: moHyphen {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp MINUS>, <&kp LS(INT1)>;
+
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            label = "MOHYPHEN";
+        };
+
+        tdRkh: tdRkh {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TDRKH";
+            #binding-cells = <0>;
+            bindings = <&kp F10>, <&kp F7>, <&kp F6>;
         };
 
         macros {
