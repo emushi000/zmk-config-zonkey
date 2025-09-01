@@ -67,7 +67,7 @@
             };
 
             coBs {
-                bindings = <&kp BS>;
+                bindings = <&kp BACKSPACE>;
                 key-positions = <11 12>;
                 layers = <0>;
             };
