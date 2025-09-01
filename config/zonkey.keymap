@@ -342,7 +342,7 @@
 &kp COMMA       &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &trans                                    &kp LS(N4)        &kp LS(N8)   &kp LS(N9)    &kp RBKT         &kp NUHS
 &kp KP_DOT      &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &trans           &trans    &kp LS(EQUAL)  &kp LS(MINUS)     &kp KP_PLUS  &kp KP_MINUS  &kp KP_MULTIPLY  &moSlash
 &kp LEFT_SHIFT  &kp KP_NUMBER_0  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &trans    &trans         &kp LS(N6)        &kp LS(N3)   &kp LBKT      &kp EQUAL        &kp LS(N5)
-&kp LCTRL       &kp LEFT_GUI     &kp LEFT_ALT     &trans           &trans           &trans                   &moQote           &moHyphen                                     &trans
+&kp LCTRL       &kp LEFT_GUI     &kp LEFT_ALT     &trans           &trans           &trans                   &moQote           &moHyUn                                     &trans
             >;
 
             sensor-bindings = <&scroll_up_down>;
