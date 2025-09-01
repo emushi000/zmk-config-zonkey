@@ -332,6 +332,10 @@
             //       |  A  |  S  |  D  |  F  |  G  | MB3 |                 |  H  |  J  |  K  |  L | :;  |
             // |SHIFT|  Z  |  X  |  C  |  V  |  B  |           | PS  | ESC |  N  |  M  | ,<  | .> | /\  |
             // | CTRL| WIN | ALT |1 TAB| SPA |3 F2 |           | BS  |2 ENT|                      | !?  |
+            // we = ESC , er = LANG1 , ui = MB4 , io = MB5
+            // sd = TAB , df = ime   , jk = MB1 , kl = MB3
+            // zx = F7  , xc = LANG2 , m, = MB2
+
 
             // -----------------------------------------------------------------------------------------
             //       |  ,  |  7  |  8  |  9  |trans|                       |  $  |  (  |  )  |  [  |  ]  |
