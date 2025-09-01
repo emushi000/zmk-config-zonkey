@@ -36,7 +36,75 @@
 };
 
 / {
-    combos { compatible = "zmk,combos"; };
+    combos {
+        compatible = "zmk,combos";
+
+        CoMBL {
+            bindings = <&mkp LCLK>;
+            key-positions = <18 19>;
+            layers = <0>;
+        };
+
+        CoMBR {
+            bindings = <&mkp RCLK>;
+            key-positions = <19 20>;
+            layers = <0>;
+        };
+
+        CoMB4 {
+            bindings = <&mkp MB4>;
+            key-positions = <6 7>;
+            layers = <0>;
+        };
+
+        CoMB5 {
+            bindings = <&mkp MB5>;
+            key-positions = <7 8>;
+            layers = <0>;
+        };
+
+        CoEsc {
+            bindings = <&kp ESC>;
+            key-positions = <1 2>;
+            layers = <0>;
+        };
+
+        CoGrave {
+            bindings = <&kp GRAVE>;
+            key-positions = <13 12>;
+            layers = <0>;
+        };
+
+        CoTab {
+            bindings = <&kp TAB>;
+            key-positions = <11 12>;
+            layers = <0>;
+        };
+
+        CoLang1 {
+            bindings = <&kp LANG1>;
+            key-positions = <2 3>;
+            layers = <0>;
+        };
+
+        CoLang2 {
+            bindings = <&kp LANG2>;
+            key-positions = <26 25>;
+            layers = <0>;
+        };
+
+        CoF10 {
+            bindings = <&kp F10>;
+            key-positions = <24 25>;
+            layers = <0>;
+        };
+
+        CoF7 {
+            bindings = <&kp F7>;
+            key-positions = <23 24>;
+            layers = <0>;
+        };
+    };
 
     mo2: mo2 {
         compatible = "zmk,behavior-mod-morph";
