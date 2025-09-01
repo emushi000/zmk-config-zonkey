@@ -40,67 +40,73 @@
         combos {
             compatible = "zmk,combos";
 
-            CoMBL {
+            coMB1 {
                 bindings = <&mkp LCLK>;
                 key-positions = <18 19>;
                 layers = <0>;
             };
 
-            CoMBR {
+            coMB2 {
+                bindings = <&mkp RCLK>;
+                key-positions = <30 31>;
+                layers = <0>;
+            };
+
+            coMB3 {
                 bindings = <&mkp RCLK>;
                 key-positions = <19 20>;
                 layers = <0>;
             };
 
-            CoMB4 {
+            coMB4 {
                 bindings = <&mkp MB4>;
                 key-positions = <6 7>;
                 layers = <0>;
             };
 
-            CoMB5 {
+            coMB5 {
                 bindings = <&mkp MB5>;
                 key-positions = <7 8>;
                 layers = <0>;
             };
 
-            CoEsc {
+            coEsc {
                 bindings = <&kp ESC>;
                 key-positions = <1 2>;
                 layers = <0>;
             };
 
-            CoGrave {
+            coGrave {
                 bindings = <&kp GRAVE>;
                 key-positions = <13 12>;
                 layers = <0>;
             };
 
-            CoTab {
+            coTab {
                 bindings = <&kp TAB>;
                 key-positions = <11 12>;
                 layers = <0>;
             };
 
-            CoLang1 {
+            coLang1 {
                 bindings = <&kp LANG1>;
                 key-positions = <2 3>;
                 layers = <0>;
             };
 
-            CoLang2 {
+            coLang2 {
                 bindings = <&kp LANG2>;
                 key-positions = <26 25>;
                 layers = <0>;
             };
 
-            CoF10 {
+            coF10 {
                 bindings = <&kp F10>;
                 key-positions = <24 25>;
                 layers = <0>;
             };
 
-            CoF7 {
+            coF7 {
                 bindings = <&kp F7>;
                 key-positions = <23 24>;
                 layers = <0>;
