@@ -29,6 +29,7 @@
 #define JP_EISU         LANGUAGE_2        // 英数
 #define JP_HANZEN       GRAVE             // 半角/全角
 #define JP_BSLH  INT1         // (backslash)
+#define JP_MIDDLEDOT 0x30FB // ・（Unicode）
 
 &mt {
     flavor = "balanced";
@@ -40,75 +41,105 @@
         combos {
             compatible = "zmk,combos";
 
-            coMB1 {
-                bindings = <&mkp LCLK>;
-                key-positions = <18 19>;
-                layers = <0>;
-            };
-
-            coMB2 {
-                bindings = <&mkp RCLK>;
-                key-positions = <30 31>;
-                layers = <0>;
-            };
-
-            coMB3 {
-                bindings = <&mkp RCLK>;
-                key-positions = <19 20>;
-                layers = <0>;
-            };
-
-            coMB4 {
-                bindings = <&mkp MB4>;
-                key-positions = <6 7>;
-                layers = <0>;
-            };
-
-            coMB5 {
-                bindings = <&mkp MB5>;
-                key-positions = <7 8>;
-                layers = <0>;
-            };
-
+            //Left row1
             coEsc {
                 bindings = <&kp ESC>;
                 key-positions = <1 2>;
                 layers = <0>;
             };
 
-            coGrave {
-                bindings = <&kp GRAVE>;
-                key-positions = <13 12>;
-                layers = <0>;
-            };
-
-            coTab {
-                bindings = <&kp TAB>;
-                key-positions = <11 12>;
+            coEnter {
+                bindings = <&kp ENTER>;
+                key-positions = <2 3>;
                 layers = <0>;
             };
 
             coLang1 {
                 bindings = <&kp LANG1>;
-                key-positions = <2 3>;
+                key-positions = <1 3>;
                 layers = <0>;
             };
 
-            coLang2 {
-                bindings = <&kp LANG2>;
-                key-positions = <26 25>;
+            //Left row2
+            coBs {
+                bindings = <&kp BACKSPACE>;
+                key-positions = <11 12>;
+                layers = <0>;
+            };
+
+            coDel {
+                bindings = <&kp DELETE>;
+                key-positions = <12 13>;
+                layers = <0>;
+            };
+
+            coGrave {
+                bindings = <&kp GRAVE>;
+                key-positions = <11 13>;
+                layers = <0>;
+            };
+
+            //Left row3
+            coF7 {
+                bindings = <&kp F7>;
+                key-positions = <24 25>;
                 layers = <0>;
             };
 
             coF10 {
                 bindings = <&kp F10>;
-                key-positions = <24 25>;
+                key-positions = <25 26>;
                 layers = <0>;
             };
 
-            coF7 {
-                bindings = <&kp F7>;
-                key-positions = <23 24>;
+            coLang2 {
+                bindings = <&kp LANG2>;
+                key-positions = <24 26>;
+                layers = <0>;
+            };
+
+            //Right row1
+            coPageUp {
+                bindings = <&kp PAGE_UP>;
+                key-positions = <6 7>;
+                layers = <0>;
+            };
+
+            coPageDown {
+                bindings = <&kp PAGE_DOWN>;
+                key-positions = <7 8>;
+                layers = <0>;
+            };
+
+            //Right row2
+            coMB1 {
+                bindings = <&mkp MB1>;
+                key-positions = <18 19>;
+                layers = <0>;
+            };
+
+            coMB3 {
+                bindings = <&mkp MB3>;
+                key-positions = <19 20>;
+                layers = <0>;
+            };
+
+            coMB2 {
+                bindings = <&mkp MB2>;
+                key-positions = <18 20>;
+                layers = <0>;
+            };
+
+            //Right row3
+            coMB4 {
+                bindings = <&mkp MB4>;
+                key-positions = <30 31>;
+                layers = <0>;
+            };
+
+            coMB5 {
+                bindings = <&mkp MB5>;
+                key-positions = <31 32>;
                 layers = <0>;
             };
         };
@@ -330,38 +361,37 @@
             // -----------------------------------------------------------------------------------------
             //       |  Q  |  W  |  E  |  R  |  T  |                       |  Y  |  U  |  I  |  O |  P  |
             //       |  A  |  S  |  D  |  F  |  G  | MB3 |                 |  H  |  J  |  K  |  L | :;  |
-            // |SHIFT|  Z  |  X  |  C  |  V  |  B  |           | PS  | ESC |  N  |  M  | ,<  | .> | /\  |
-            // | CTRL| WIN | ALT |1 TAB| SPA |3 F2 |           | BS  |2 ENT|                      | !?  |
-            // we = ESC , er = LANG1 , ui = MB4 , io = MB5
-            // sd = TAB , df = ime   , jk = MB1 , kl = MB3
-            // zx = F7  , xc = LANG2 , m, = MB2
-
+            // |SHIFT|  Z  |  X  |  C  |  V  |  B  |           | PS  |  -  |  N  |  M  | ,<  | .> | /\  |
+            // | CTRL| WIN | ALT |1 TAB| SPA |3 F2 |           | ・  |2 ENT|                      | !?  |
+            // qw = LANG1  , we = ESC , er = ENTER  , ui = PAGE_UP , io = PAGE_DOWN , op = none
+            // as = HANZEN , sd = BS  , df = DELETE , jk = MB1     , kl = MB3       , l; = MB2
+            // zx = LANG2  , xc = F7  , cv = F10    , m, = MB4     , ,. = MB5       , ./ = none
 
             // -----------------------------------------------------------------------------------------
-            //       |  ,  |  7  |  8  |  9  |trans|                       |  $  |  (  |  )  |  [  |  ]  |
-            //       |  .  |  4  |  5  |  6  |trans|trans|                 |  =  |  +  |  -  |  *  | /\  |
-            // |SHIFT|  0  |  1  |  2  |  3  |trans|           |trans|  ~  |  &  |  #  |  @  |  ^  |  %  |
-            // | CTRL| WIN | ALT |trans|trans|trans|           | "'  | -_  |                       |trans|
+            //       |  ,  |  7  |  8  |  9  |none |                       |  $  |  (  |  )  |  [  |  ]  |
+            //       |  .  |  4  |  5  |  6  |none |none |                 |  =  |  +  |  -  |  *  | /\  |
+            // |SHIFT|  0  |  1  |  2  |  3  |none |           |none |  ~  |  &  |  #  |  @  |  ^  |  %  |
+            // | CTRL| WIN | ALT |none |none |none |           | "'  | -_  |                       |  |  |
 
             // -----------------------------------------------------------------------------------------
             //       | ^Q  | ^W  | ^E  | ^R  | ^T  |                       | ^Y  | PD  |  ↑  | PU  | ^P  |
-            //       | ^A  | ^S  | ^D  | ^F  | ^G  |trans|                 |trans|  ←  |  ↓  |  →  | App |
-            // |SHIFT|^Z^Y | ^X  | ^C  | ^V  | ^B  |           |trans|trans|trans|trans|HOME | END |trans|
-            // | CTRL| WIN | ALT |trans|trans|trans|           |trans|trans|                       |trans|
+            //       | ^A  | ^S  | ^D  | ^F  | ^G  |none |                 |none |  ←  |  ↓  |  →  | App |
+            // |SHIFT|^Z^Y | ^X  | ^C  | ^V  | ^B  |           |none |none |none |none |HOME | END |none |
+            // | CTRL| WIN | ALT |none | #V  |none |           |none |none |                       |none |
 
             // -----------------------------------------------------------------------------------------
             //       | F1  | F2  | F3  | F4  | F5  |                       | F6  | F7  | F8  | F9  | F10 |
-            //       |  1  |  2  |  3  |  4  |  5  |trans|                 |  6  |  7  |  8  |  9  |  0  |
+            //       |  1  |  2  |  3  |  4  |  5  |none |                 |  6  |  7  |  8  |  9  |  0  |
             // |SHIFT| F11 | F12 | F13 | F14 | F15 |           |BTCLA|BTCL | BT0 | BT1 | BT2 | BT3 | BT4 |
-            // | CTRL| WIN | ALT |trans|trans|trans|           |trans|trans|                       |trans|
+            // | CTRL| WIN | ALT |none |none |none |           |none |none |                       |none |
 
 
         default_layer {
             bindings = <
-&kp Q           &kp W         &kp E         &kp R             &kp T                                             &kp Y          &kp U      &kp I      &kp O    &kp P
-&kp A           &kp S         &kp D         &kp F             &kp G        &msc MB3            &kp ESC          &kp H          &kp J      &kp K      &kp L    &moColon
-&kp LEFT_SHIFT  &kp Z         &kp X         &kp C             &kp V        &kp B               &kp PRINTSCREEN  &kp N          &kp M      &kp COMMA  &kp DOT  &moSlash
-&kp LCTRL       &kp LEFT_WIN  &kp LEFT_ALT  &lt 1 TAB         &kp SPACE    &lt 3 F2                             &moBs          &lt 2 ENTER                    &moExQu
+&kp Q           &kp W         &kp E         &kp R             &kp T                                             &kp Y             &kp U      &kp I      &kp O    &kp P
+&kp A           &kp S         &kp D         &kp F             &kp G        &msc MB3            &moHyUn          &kp H             &kp J      &kp K      &kp L    &moColon
+&kp LEFT_SHIFT  &kp Z         &kp X         &kp C             &kp V        &kp B               &kp PRINTSCREEN  &kp N             &kp M      &kp COMMA  &kp DOT  &moSlash
+&kp LCTRL       &kp LEFT_WIN  &kp LEFT_ALT  &lt 1 TAB         &kp SPACE    &lt 3 F2                             &kp JP_MIDDLEDOT  &lt 2 ENTER                    &moExQu
             >;
 
             sensor-bindings =
@@ -371,10 +401,10 @@
 
         layer_1 {
             bindings = <
-&kp COMMA       &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &trans                                    &kp LS(N4)        &kp LS(N8)   &kp LS(N9)    &kp RBKT         &kp NUHS
-&kp KP_DOT      &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &trans           &trans    &kp LS(EQUAL)  &kp LS(MINUS)     &kp KP_PLUS  &kp KP_MINUS  &kp KP_MULTIPLY  &moSlash
-&kp LEFT_SHIFT  &kp KP_NUMBER_0  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &trans    &trans         &kp LS(N6)        &kp LS(N3)   &kp LBKT      &kp EQUAL        &kp LS(N5)
-&kp LCTRL       &kp LEFT_GUI     &kp LEFT_ALT     &trans           &trans           &trans                   &moQote           &moHyUn                                     &trans
+&kp COMMA       &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &none                                    &kp LS(N4)        &kp LS(N8)   &kp LS(N9)    &kp RBKT         &kp NUHS
+&kp KP_DOT      &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &none            &none    &kp LS(EQUAL)  &kp LS(MINUS)     &kp KP_PLUS  &kp KP_MINUS  &kp KP_MULTIPLY  &moSlash
+&kp LEFT_SHIFT  &kp KP_NUMBER_0  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &none    &none          &kp LS(N6)        &kp LS(N3)   &kp LBKT      &kp EQUAL        &kp LS(N5)
+&kp LCTRL       &kp LEFT_GUI     &kp LEFT_ALT     &none            &none            &none                   &moQote           &moHyUn                                     &kp PIPE
             >;
 
             sensor-bindings = <&scroll_up_down>;
@@ -383,9 +413,9 @@
         layer_2 {
             bindings = <
 &kp LC(Q)       &kp LC(W)     &kp LC(E)     &kp LC(R)  &kp LC(T)                       &kp LC(Y)  &kp PAGE_UP     &kp UP_ARROW    &kp PAGE_DOWN    &kp LC(P)
-&kp LC(A)       &kp LC(S)     &kp LC(D)     &kp LC(F)  &kp LC(G)  &trans       &trans  &trans     &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp K_APP
-&kp LEFT_SHIFT  &moZCtrlY     &kp LC(X)     &kp LC(C)  &kp LC(V)  &kp LC(B)    &trans  &trans     &trans          &kp HOME        &kp END          &trans
-&kp LCTRL       &kp LEFT_WIN  &kp LEFT_ALT  &trans     &trans     &trans               &trans     &trans                                           &trans
+&kp LC(A)       &kp LC(S)     &kp LC(D)     &kp LC(F)  &kp LC(G)  &none        &none   &none      &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp K_APP
+&kp LEFT_SHIFT  &moZCtrlY     &kp LC(X)     &kp LC(C)  &kp LC(V)  &kp LC(B)    &none   &none      &none           &kp HOME        &kp END          &none
+&kp LCTRL       &kp LEFT_WIN  &kp LEFT_ALT  &none      &kp LG(V)  &none                &none      &none                                            &none
             >;
 
             sensor-bindings = <&scroll_up_down>;
@@ -394,9 +424,9 @@
         layer_3 {
             bindings = <
 &kp F1  &kp F2   &kp F3   &kp F4   &kp F5                              &kp F6        &kp F7        &kp F8        &kp F9        &kp F10
-&kp N1  &kp N2   &kp N3   &kp N4   &kp N5   &trans     &bt BT_CLR      &kp N6        &kp N7        &kp N8        &kp N9        &kp N0
-&trans  &kp F11  &kp F12  &kp F13  &kp F14  &kp F15    &bt BT_CLR_ALL  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
-&trans  &trans   &trans   &trans   &trans   &trans                     &trans        &trans                                    &trans
+&kp N1  &kp N2   &kp N3   &kp N4   &kp N5   &none      &bt BT_CLR      &kp N6        &kp N7        &kp N8        &kp N9        &kp N0
+&none   &kp F11  &kp F12  &kp F13  &kp F14  &kp F15    &bt BT_CLR_ALL  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
+&none   &none    &none    &none    &none    &none                      &none         &none                                     &none
             >;
 
             sensor-bindings = <&scroll_up_down>;
