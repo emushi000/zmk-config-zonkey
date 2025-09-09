@@ -29,6 +29,10 @@
 #define JP_HANZEN       GRAVE             // 半角/全角
 #define JP_BSLH  INT1                     // (backslash)
 
+// new define
+#define JP_EXCLAMATION  LS(N1)            // !
+#define JP_QUESTION     LS(SLASH)         // ?
+
 &mt {
     flavor = "balanced";
     quick-tap-ms = <0>;
@@ -292,7 +296,7 @@
         moSlash: moSlash {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&kp KP_SLASH>, <&kp INT_YEN>;
+            bindings = <&kp KP_SLASH>, <&kp JP_YEN>;
 
             mods = <(MOD_LSFT|MOD_RSFT)>;
             label = "MOSLASH";
@@ -301,7 +305,7 @@
         moExQu: moExQu {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&kp LS(N1)>, <&kp LS(SLASH)>;
+            bindings = <&kp JP_EXCLAMATION>, <&kp JP_QUESTION>;
 
             mods = <(MOD_LSFT|MOD_RSFT)>;
             label = "MOEXQU";
