@@ -314,7 +314,7 @@
         moColon: moColon {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&kp SEMI>, <&kp SQT>;
+            bindings = <&kp SEMI>, <&kp JP_COLON>;
 
             mods = <(MOD_LSFT|MOD_RSFT)>;
             label = "MOCOLON";
@@ -323,7 +323,7 @@
         moQote: moQote {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&kp LS(N2)>, <&kp LS(N7)>;
+            bindings = <&kp JP_DQUOTE>, <&kp JP_QUOTE>;
 
             mods = <(MOD_LSFT|MOD_RSFT)>;
             label = "MOQOTE";
@@ -332,7 +332,7 @@
         moHyUn: moHyUn {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&kp MINUS>, <&kp LS(INT1)>;
+            bindings = <&kp MINUS>, <&kp JP_UNDERSCORE>;
 
             mods = <(MOD_LSFT|MOD_RSFT)>;
             label = "MOHYUN";
