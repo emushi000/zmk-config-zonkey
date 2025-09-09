@@ -116,14 +116,14 @@
                 layers = <0>;
             };
 
-            coMB3 {
-                bindings = <&mkp MB3>;
+            coMB2 {
+                bindings = <&mkp MB2>;
                 key-positions = <19 20>;
                 layers = <0>;
             };
 
-            coMB2 {
-                bindings = <&mkp MB2>;
+            coMB3 {
+                bindings = <&mkp MB3>;
                 key-positions = <18 20>;
                 layers = <0>;
             };
