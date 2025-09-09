@@ -262,15 +262,6 @@
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
-        moBs: moBs {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp BACKSPACE>, <&kp DELETE>;
-
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-            label = "MOBS";
-        };
-
         moSlash: moSlash {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
