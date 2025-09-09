@@ -262,24 +262,6 @@
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
-        moSlash: moSlash {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp KP_SLASH>, <&kp INT_YEN>;
-
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-            label = "MOSLASH";
-        };
-
-        moExQu: moExQu {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp LS(N1)>, <&kp LS(SLASH)>;
-
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-            label = "MOEXQU";
-        };
-
         macros {
             to_layer_0: to_layer_0 {
                 compatible = "zmk,behavior-macro-one-param";
@@ -307,6 +289,24 @@
         };
 
         // new behavior
+        moSlash: moSlash {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp KP_SLASH>, <&kp INT_YEN>;
+
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            label = "MOSLASH";
+        };
+
+        moExQu: moExQu {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp LS(N1)>, <&kp LS(SLASH)>;
+
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            label = "MOEXQU";
+        };
+
         moColon: moColon {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
