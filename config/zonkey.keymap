@@ -405,9 +405,9 @@
         layer_2 {
             bindings = <
 &kp LC(Q)       &kp LC(W)     &kp LC(E)     &kp LC(R)  &kp LC(T)                       &kp LC(Y)  &kp PAGE_UP     &kp UP_ARROW    &kp PAGE_DOWN    &kp LC(P)
-&kp LC(A)       &kp LC(S)     &kp LC(D)     &kp LC(F)  &kp LC(G)  &none        &none   &none      &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp K_APP
-&kp LEFT_SHIFT  &moZCtrlY     &kp LC(X)     &kp LC(C)  &kp LC(V)  &kp LC(B)    &none   &none      &none           &kp HOME        &kp END          &none
-&kp LCTRL       &kp LEFT_WIN  &kp LEFT_ALT  &none      &kp LG(V)  &none                &none      &none                                            &none
+&kp LC(A)       &kp LC(S)     &kp LC(D)     &kp LC(F)  &kp LC(G)  &none        &none   &kp LC(H)  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp K_APP
+&kp LEFT_SHIFT  &moZCtrlY     &kp LC(X)     &kp LC(C)  &kp LC(V)  &kp LC(B)    &none   &kp LC(N)  &none           &kp HOME        &kp END          &none
+&kp LCTRL       &kp LEFT_WIN  &kp LEFT_ALT  &kp LG(V)  &kp LG(H)  &kp LG(B)            &none      &none                                            &none
             >;
 
             sensor-bindings = <&scroll_up_down>;
