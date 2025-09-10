@@ -392,8 +392,8 @@
             bindings = <
 &kp COMMA       &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &none                                    &kp LS(N4)        &kp LS(N8)   &kp LS(N9)    &kp RBKT         &kp NUHS
 &kp KP_DOT      &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &none            &none    &moHyUn    &kp JP_AT      &kp JP_LPAREN  &kp JP_RPAREN   &kp JP_LBRACKET   &kp JP_RBRACKET
-&kp LEFT_SHIFT  &kp KP_NUMBER_0  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &none    &JP_TILDE  &kp JP_EQUAL   &kp KP_PLUS    &kp KP_MINUS    &kp KP_MULTIPLY   &moSlash
-&kp LCTRL       &kp LEFT_GUI     &kp LEFT_ALT     &none            &none            &none                   &moQote           &moHyUn                                     &kp PIPE
+&kp LEFT_SHIFT  &kp KP_NUMBER_0  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &none    &none          &kp LS(N6)        &kp LS(N3)   &kp LBKT      &kp EQUAL        &kp LS(N5)
+&kp LCTRL       &kp LEFT_GUI     &kp LEFT_ALT     &none            &none            &none               &JP_BACKQUOTE  &moQote                                          &moExQu
             >;
 
 // &kp COMMA       &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &none                                &kp JP_HASH    &kp JP_DOLLER  &kp JP_PARCENT  &kp JP_AMPERSAND  &kp JP_CARET
