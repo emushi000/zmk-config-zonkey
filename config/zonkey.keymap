@@ -32,6 +32,16 @@
 // new define
 #define JP_EXCLAMATION  LS(N1)            // !
 #define JP_QUESTION     LS(SLASH)         // ?
+#define JP_HASH         LS(N3)            // #
+#define JP_DOLLAR       LS(N4)            // $
+#define JP_PARCENT      LS(N5)            // %
+
+
+//       |  ,  |  7  |  8  |  9  |none |                      |  #  |  $  |  %  |  &  |  ^  |
+//       |  .  |  4  |  5  |  6  |none |none |                |  @  |  (  |  )  |  [  |  ]  |
+// |SHIFT|  0  |  1  |  2  |  3  |none |          |  ~| | -_  |  =  |  +  |  -  |  *  | /\  |
+// | CTRL| WIN | ALT |none |none |none |          |  `  | "'  |                       | !?  |
+
 
 &mt {
     flavor = "balanced";
@@ -351,29 +361,32 @@
     keymap {
         compatible = "zmk,keymap";
 
-            // -----------------------------------------------------------------------------------------
-            //       |  Q  |  W  |  E  |  R  |  T  |                       |  Y  |  U  |  I  |  O |  P  |
-            //       |  A  |  S  |  D  |  F  |  G  | MB3 |                 |  H  |  J  |  K  |  L | :;  |
-            // |SHIFT|  Z  |  X  |  C  |  V  |  B  |           | PS  | -_  |  N  |  M  | ,<  | .> | /\  |
-// | CTRL| WIN | ALT |1 TAB| SPA |3 F2 |           |3 F2 |2 ENT|                      | !?  |
-            // we = ESC , er = ENTER  , wr = LANG1  , ui = PAGE_UP , io = PAGE_DOWN , uo = none
-            // as = BS  , sd = DELETE , sf = HANZEN , jk = MB1     , kl = MB2       , jl = MB3
+// -----------------------------------------------------------------------------------------
+//       |  Q  |  W  |  E  |  R  |  T  |                          |  Y  |  U  |  I  |  O |  P  |
+//       |  A  |  S  |  D  |  F  |  G  | MB3 |                    |  H  |  J  |  K  |  L | :;  |
+// |SHIFT|  Z  |  X  |  C  |  V  |  B  |          | PS  | -_  |  N  |  M  | ,<  | .> | /\  |
+// | CTRL| WIN | ALT |1 TAB| SPA |3 F2 |          |3 F2 |2 ENT|                      | !?  |
+// we = ESC , er = ENTER  , wr = LANG1  , ui = PAGE_UP , io = PAGE_DOWN , uo = none
+// as = BS  , sd = DELETE , sf = HANZEN , jk = MB1     , kl = MB2       , jl = MB3
 // zx = F7  , xc = F10    , cv = LANG2  , m, = MB4     , ,. = MB5       , uo = no
-            // -----------------------------------------------------------------------------------------
-//       |  ,  |  7  |  8  |  9  |none |                  |  #  |  $  |  %  |  &  |  ^  |
-//       |  .  |  4  |  5  |  6  |none |none|             |  @  |  (  |  )  |  [  |  ]  |
-// |SHIFT|  0  |  1  |  2  |  3  |none |      |  ~| | -_  |  =  |  +  |  -  |  *  | /\  |
-// | CTRL| WIN | ALT |none |none |none |      |  `  | "'  |                       | !? 
-            // -----------------------------------------------------------------------------------------
-//       | ^Q  | ^W  | ^E  | ^R  | ^T  |                    | ^Y  | PD  |  ↑  | PU  | ^P  |
-//       | ^A  | ^S  | ^D  | ^F  | ^G  |none |              | ^H  |  ←  |  ↓  |  →  | App |
-// |SHIFT|^Z^Y | ^X  | ^C  | ^V  | ^B  |        |none |none | ^N  |none |HOME | END |none |
-// | CTRL| WIN | ALT |LG(V)|LG(H)|LG(B)|        |none |none |                       |none
-            // -----------------------------------------------------------------------------------------
-//       | F1  | F2  | F3  | F4  | F5  |                    | F6  | F7  | F8  | F9  | F10 |
-//       |  1  |  2  |  3  |  4  |  5  |none |              |  6  |  7  |  8  |  9  |  0  |
-// |SHIFT| F11 | F12 | F13 | F14 | F15 |        |BTCLA|BTCL | BT0 | BT1 | BT2 | BT3 | BT4 |
-// | CTRL| WIN | ALT |none |none |none |        |none |none |                       |none |
+
+// -----------------------------------------------------------------------------------------
+//       |  ,  |  7  |  8  |  9  |none |                      |  #  |  $  |  %  |  &  |  ^  |
+//       |  .  |  4  |  5  |  6  |none |none |                |  @  |  (  |  )  |  [  |  ]  |
+// |SHIFT|  0  |  1  |  2  |  3  |none |          |  ~| | -_  |  =  |  +  |  -  |  *  | /\  |
+// | CTRL| WIN | ALT |none |none |none |          |  `  | "'  |                       | !?  |
+
+// -----------------------------------------------------------------------------------------
+//       | ^Q  | ^W  | ^E  | ^R  | ^T  |                      | ^Y  | PD  |  ↑  | PU  | ^P  |
+//       | ^A  | ^S  | ^D  | ^F  | ^G  |none |                | ^H  |  ←  |  ↓  |  →  | App |
+// |SHIFT|^Z^Y | ^X  | ^C  | ^V  | ^B  |          |none |none | ^N  |none |HOME | END |none |
+// | CTRL| WIN | ALT |LG(V)|LG(H)|LG(B)|          |none |none |                       |none |
+
+// -----------------------------------------------------------------------------------------
+//       | F1  | F2  | F3  | F4  | F5  |                      | F6  | F7  | F8  | F9  | F10 |
+//       |  1  |  2  |  3  |  4  |  5  |none |                |  6  |  7  |  8  |  9  |  0  |
+// |SHIFT| F11 | F12 | F13 | F14 | F15 |          |BTCLA|BTCL | BT0 | BT1 | BT2 | BT3 | BT4 |
+// | CTRL| WIN | ALT |none |none |none |          |none |none |                       |none |
 
         default_layer {
             bindings = <
@@ -390,13 +403,13 @@
 
         layer_1 {
             bindings = <
-&kp COMMA       &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &none                                    &kp LS(N4)        &kp LS(N8)   &kp LS(N9)    &kp RBKT         &kp NUHS
-&kp KP_DOT      &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &none            &none    &moHyUn    &kp JP_AT      &kp JP_LPAREN  &kp JP_RPAREN   &kp JP_LBRACKET   &kp JP_RBRACKET
-&kp LEFT_SHIFT  &kp KP_NUMBER_0  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &none    &kp JP_TILDE  &kp JP_EQUAL   &kp KP_PLUS    &kp KP_MINUS    &kp KP_MULTIPLY   &moSlash
-&kp LCTRL       &kp LEFT_GUI     &kp LEFT_ALT     &none            &none            &none               &kp JP_BACKQUOTE  &moQote                                          &moExQu
+&kp COMMA       &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &none                                &kp JP_HASH    &kp JP_DOLLAR   &kp JP_PARCENT  &kp JP_AMPERSAND  &kp JP_CARET
+&kp KP_DOT      &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &none            &none    &moHyUn    &kp JP_AT      &kp JP_LPAREN   &kp JP_RPAREN   &kp JP_LBRACKET   &kp JP_RBRACKET
+&kp LEFT_SHIFT  &kp KP_NUMBER_0  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &none    &kp JP_TILDE  &kp JP_EQUAL   &kp KP_PLUS  &kp KP_MINUS    &kp KP_MULTIPLY   &moSlash
+&kp LCTRL       &kp LEFT_GUI     &kp LEFT_ALT     &none            &none            &none               &kp JP_BACKQUOTE  &moQote                                        &moExQu
             >;
 
-// &kp COMMA       &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &none                                &kp JP_HASH    &kp JP_DOLLER  &kp JP_PARCENT  &kp JP_AMPERSAND  &kp JP_CARET
+// &kp COMMA       &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &none                                &kp JP_HASH    &kp JP_DOLLAR  &kp JP_PARCENT  &kp JP_AMPERSAND  &kp JP_CARET
 // &kp KP_DOT      &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &none            &none    &moHyUn    &kp JP_AT      &kp JP_LPAREN  &kp JP_RPAREN   &kp JP_LBRACKET   &kp JP_RBRACKET
 // &kp LEFT_SHIFT  &kp KP_NUMBER_0  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &none    &kp JP_TILDE  &kp JP_EQUAL   &kp KP_PLUS    &kp KP_MINUS    &kp KP_MULTIPLY   &moSlash
 // &kp LCTRL       &kp LEFT_GUI     &kp LEFT_ALT     &none            &none            &none               &JP_BACKQUOTE  &moQote                                          &moExQu
