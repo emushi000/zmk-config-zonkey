@@ -355,28 +355,25 @@
             //       |  Q  |  W  |  E  |  R  |  T  |                       |  Y  |  U  |  I  |  O |  P  |
             //       |  A  |  S  |  D  |  F  |  G  | MB3 |                 |  H  |  J  |  K  |  L | :;  |
             // |SHIFT|  Z  |  X  |  C  |  V  |  B  |           | PS  | -_  |  N  |  M  | ,<  | .> | /\  |
-            // | CTRL| WIN | ALT |1 TAB| SPA |3 ESC|           |3 F2 |2 ENT|                      | !?  |
+// | CTRL| WIN | ALT |1 TAB| SPA |3 F2 |           |3 F2 |2 ENT|                      | !?  |
             // we = ESC , er = ENTER  , wr = LANG1  , ui = PAGE_UP , io = PAGE_DOWN , uo = none
             // as = BS  , sd = DELETE , sf = HANZEN , jk = MB1     , kl = MB2       , jl = MB3
-            // zx = F7  , xc = F10    , cv = LANG2  , m, = MB4     , ,. = MB5       , uo = none
-
+// zx = F7  , xc = F10    , cv = LANG2  , m, = MB4     , ,. = MB5       , uo = no
             // -----------------------------------------------------------------------------------------
-            //       |  ,  |  7  |  8  |  9  |none |                       |  #  |  $  |  %  |  &  |  ^  |
-            //       |  .  |  4  |  5  |  6  |none |none                   |  @  |  (  |  )  |  [  |  ]  |
-            // |SHIFT|  0  |  1  |  2  |  3  |none |           |  ~| | -_  |  =  |  +  |  -  |  *  | /\  |
-            // | CTRL| WIN | ALT |none |none |none |           |  `  | "'  |                       | !?  |
-
+//       |  ,  |  7  |  8  |  9  |none |                  |  #  |  $  |  %  |  &  |  ^  |
+//       |  .  |  4  |  5  |  6  |none |none|             |  @  |  (  |  )  |  [  |  ]  |
+// |SHIFT|  0  |  1  |  2  |  3  |none |      |  ~| | -_  |  =  |  +  |  -  |  *  | /\  |
+// | CTRL| WIN | ALT |none |none |none |      |  `  | "'  |                       | !? 
             // -----------------------------------------------------------------------------------------
-            //       | ^Q  | ^W  | ^E  | ^R  | ^T  |                       | ^Y  | PD  |  ↑  | PU  | ^P  |
-            //       | ^A  | ^S  | ^D  | ^F  | ^G  |none |                 | ^H  |  ←  |  ↓  |  →  | App |
-            // |SHIFT|^Z^Y | ^X  | ^C  | ^V  | ^B  |           |none |none | ^N  |none |HOME | END |none |
-            // | CTRL| WIN | ALT |LG(V)|LG(H)|LG(B)|           |none |none |                       |none |
-
+//       | ^Q  | ^W  | ^E  | ^R  | ^T  |                    | ^Y  | PD  |  ↑  | PU  | ^P  |
+//       | ^A  | ^S  | ^D  | ^F  | ^G  |none |              | ^H  |  ←  |  ↓  |  →  | App |
+// |SHIFT|^Z^Y | ^X  | ^C  | ^V  | ^B  |        |none |none | ^N  |none |HOME | END |none |
+// | CTRL| WIN | ALT |LG(V)|LG(H)|LG(B)|        |none |none |                       |none
             // -----------------------------------------------------------------------------------------
-            //       | F1  | F2  | F3  | F4  | F5  |                       | F6  | F7  | F8  | F9  | F10 |
-            //       |  1  |  2  |  3  |  4  |  5  |none |                 |  6  |  7  |  8  |  9  |  0  |
-            // |SHIFT| F11 | F12 | F13 | F14 | F15 |           |BTCLA|BTCL | BT0 | BT1 | BT2 | BT3 | BT4 |
-            // | CTRL| WIN | ALT |none |none |none |           |none |none |                       |none |
+//       | F1  | F2  | F3  | F4  | F5  |                    | F6  | F7  | F8  | F9  | F10 |
+//       |  1  |  2  |  3  |  4  |  5  |none |              |  6  |  7  |  8  |  9  |  0  |
+// |SHIFT| F11 | F12 | F13 | F14 | F15 |        |BTCLA|BTCL | BT0 | BT1 | BT2 | BT3 | BT4 |
+// | CTRL| WIN | ALT |none |none |none |        |none |none |                       |none |
 
         default_layer {
             bindings = <
