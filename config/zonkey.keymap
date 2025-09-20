@@ -29,6 +29,20 @@
 #define JP_HANZEN       GRAVE             // 半角/全角
 #define JP_BSLH  INT1                     // (backslash)
 
+// new define
+#define JP_EXCLAMATION  LS(N1)            // !
+#define JP_QUESTION     LS(SLASH)         // ?
+#define JP_HASH         LS(N3)            // #
+#define JP_DOLLAR       LS(N4)            // $
+#define JP_PARCENT      LS(N5)            // %
+
+
+//       |  ,  |  7  |  8  |  9  |none |                      |  #  |  $  |  %  |  &  |  ^  |
+//       |  .  |  4  |  5  |  6  |none |none |                |  @  |  (  |  )  |  [  |  ]  |
+// |SHIFT|  0  |  1  |  2  |  3  |none |          |  ~| | -_  |  =  |  +  |  -  |  *  | /\  |
+// | CTRL| WIN | ALT |none |none |none |          |  `  | "'  |                       | !?  |
+
+
 &mt {
     flavor = "balanced";
     quick-tap-ms = <0>;
@@ -116,14 +130,14 @@
                 layers = <0>;
             };
 
-            coMB3 {
-                bindings = <&mkp MB3>;
+            coMB2 {
+                bindings = <&mkp MB2>;
                 key-positions = <19 20>;
                 layers = <0>;
             };
 
-            coMB2 {
-                bindings = <&mkp MB2>;
+            coMB3 {
+                bindings = <&mkp MB3>;
                 key-positions = <18 20>;
                 layers = <0>;
             };
@@ -262,33 +276,6 @@
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
-        moBs: moBs {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp BACKSPACE>, <&kp DELETE>;
-
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-            label = "MOBS";
-        };
-
-        moSlash: moSlash {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp KP_SLASH>, <&kp INT_YEN>;
-
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-            label = "MOSLASH";
-        };
-
-        moExQu: moExQu {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp LS(N1)>, <&kp LS(SLASH)>;
-
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-            label = "MOEXQU";
-        };
-
         macros {
             to_layer_0: to_layer_0 {
                 compatible = "zmk,behavior-macro-one-param";
@@ -316,10 +303,28 @@
         };
 
         // new behavior
+        moSlash: moSlash {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp KP_SLASH>, <&kp JP_YEN>;
+
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            label = "MOSLASH";
+        };
+
+        moExQu: moExQu {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp JP_EXCLAMATION>, <&kp JP_QUESTION>;
+
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            label = "MOEXQU";
+        };
+
         moColon: moColon {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&kp SEMI>, <&kp SQT>;
+            bindings = <&kp SEMI>, <&kp JP_COLON>;
 
             mods = <(MOD_LSFT|MOD_RSFT)>;
             label = "MOCOLON";
@@ -328,7 +333,7 @@
         moQote: moQote {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&kp LS(N2)>, <&kp LS(N7)>;
+            bindings = <&kp JP_DQUOTE>, <&kp JP_QUOTE>;
 
             mods = <(MOD_LSFT|MOD_RSFT)>;
             label = "MOQOTE";
@@ -337,7 +342,7 @@
         moHyUn: moHyUn {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&kp MINUS>, <&kp LS(INT1)>;
+            bindings = <&kp MINUS>, <&kp JP_UNDERSCORE>;
 
             mods = <(MOD_LSFT|MOD_RSFT)>;
             label = "MOHYUN";
@@ -356,40 +361,39 @@
     keymap {
         compatible = "zmk,keymap";
 
-            // -----------------------------------------------------------------------------------------
-            //       |  Q  |  W  |  E  |  R  |  T  |                       |  Y  |  U  |  I  |  O |  P  |
-            //       |  A  |  S  |  D  |  F  |  G  | MB3 |                 |  H  |  J  |  K  |  L | :;  |
-            // |SHIFT|  Z  |  X  |  C  |  V  |  B  |           | PS  |  -  |  N  |  M  | ,<  | .> | /\  |
-            // | CTRL| WIN | ALT |1 TAB| SPA |3 F2 |           | F13 |2 ENT|                      | !?  |
-            // qw = LANG1  , we = ESC , er = ENTER  , ui = PAGE_UP , io = PAGE_DOWN , op = none
-            // as = HANZEN , sd = BS  , df = DELETE , jk = MB1     , kl = MB3       , l; = MB2
-            // zx = LANG2  , xc = F7  , cv = F10    , m, = MB4     , ,. = MB5       , ./ = none
+// -----------------------------------------------------------------------------------------
+//       |  Q  |  W  |  E  |  R  |  T  |                      |  Y  |  U  |  I  |  O |  P  |
+//       |  A  |  S  |  D  |  F  |  G  | MB3 |                |  H  |  J  |  K  |  L | :;  |
+// |SHIFT|  Z  |  X  |  C  |  V  |  B  |          | PS  | -_  |  N  |  M  | ,<  | .> | /\  |
+// | CTRL| WIN | ALT |1 TAB| SPA |SHIFT|          |3 F2 |2 ENT|                      | !?  |
+// we = ESC , er = ENTER  , wr = LANG1  , ui = PAGE_UP , io = PAGE_DOWN , uo = none
+// as = BS  , sd = DELETE , sf = HANZEN , jk = MB1     , kl = MB2       , jl = MB3
+// zx = F7  , xc = F10    , cv = LANG2  , m, = MB4     , ,. = MB5       , uo = no
 
-            // -----------------------------------------------------------------------------------------
-            //       |  ,  |  7  |  8  |  9  |none |                       |  $  |  (  |  )  |  [  |  ]  |
-            //       |  .  |  4  |  5  |  6  |none |none |                 |  =  |  +  |  -  |  *  | /\  |
-            // |SHIFT|  0  |  1  |  2  |  3  |none |           |none |  ~  |  &  |  #  |  @  |  ^  |  %  |
-            // | CTRL| WIN | ALT |none |none |none |           | "'  | -_  |                       |  |  |
+// -----------------------------------------------------------------------------------------
+//       |  ,  |  7  |  8  |  9  |none |                      |  #  |  $  |  %  |  &  |  ^  |
+//       |  .  |  4  |  5  |  6  |none |none |                |  @  |  (  |  )  |  [  |  ]  |
+// |SHIFT|  0  |  1  |  2  |  3  |none |          |  ~| | -_  |  =  |  +  |  -  |  *  | /\  |
+// | CTRL| WIN | ALT |none |none |none |          |  `  | "'  |                       | !?  |
 
-            // -----------------------------------------------------------------------------------------
-            //       | ^Q  | ^W  | ^E  | ^R  | ^T  |                       | ^Y  | PD  |  ↑  | PU  | ^P  |
-            //       | ^A  | ^S  | ^D  | ^F  | ^G  |none |                 |none |  ←  |  ↓  |  →  | App |
-            // |SHIFT|^Z^Y | ^X  | ^C  | ^V  | ^B  |           |none |none |none |none |HOME | END |none |
-            // | CTRL| WIN | ALT |none | #V  |none |           |none |none |                       |none |
+// -----------------------------------------------------------------------------------------
+//       | ^Q  | ^W  | ^E  | ^R  | ^T  |                      | ^Y  | PD  |  ↑  | PU  | ^P  |
+//       | ^A  | ^S  | ^D  | ^F  | ^G  |none |                | ^H  |  ←  |  ↓  |  →  | App |
+// |SHIFT|^Z^Y | ^X  | ^C  | ^V  | ^B  |          |none |none | ^N  |none |HOME | END |none |
+// | CTRL| WIN | ALT |LG(V)|LG(H)|LG(B)|          |none |none |                       |none |
 
-            // -----------------------------------------------------------------------------------------
-            //       | F1  | F2  | F3  | F4  | F5  |                       | F6  | F7  | F8  | F9  | F10 |
-            //       |  1  |  2  |  3  |  4  |  5  |none |                 |  6  |  7  |  8  |  9  |  0  |
-            // |SHIFT| F11 | F12 | F13 | F14 | F15 |           |BTCLA|BTCL | BT0 | BT1 | BT2 | BT3 | BT4 |
-            // | CTRL| WIN | ALT |none |none |none |           |none |none |                       |none |
-
+// -----------------------------------------------------------------------------------------
+//       | F1  | F2  | F3  | F4  | F5  |                      | F6  | F7  | F8  | F9  | F10 |
+//       |  1  |  2  |  3  |  4  |  5  |none |                |  6  |  7  |  8  |  9  |  0  |
+// |SHIFT| F11 | F12 | F13 | F14 | F15 |          |BTCLA|BTCL | BT0 | BT1 | BT2 | BT3 | BT4 |
+// | CTRL| WIN | ALT |none |none |none |          |none |none |                       |none |
 
         default_layer {
             bindings = <
-&kp Q           &kp W         &kp E         &kp R             &kp T                                             &kp Y    &kp U      &kp I      &kp O    &kp P
-&kp A           &kp S         &kp D         &kp F             &kp G        &msc MB3            &moHyUn          &kp H    &kp J      &kp K      &kp L    &moColon
-&kp LEFT_SHIFT  &kp Z         &kp X         &kp C             &kp V        &kp B               &kp PRINTSCREEN  &kp N    &kp M      &kp COMMA  &kp DOT  &moSlash
-&kp LCTRL       &kp LEFT_WIN  &kp LEFT_ALT  &lt 1 TAB         &kp SPACE    &lt 3 F2                             &kp F13  &lt 2 ENTER                    &moExQu
+&kp Q       &kp W         &kp E         &kp R      &kp T                                        &kp Y     &kp U        &kp I      &kp O    &kp P
+&kp A       &kp S         &kp D         &kp F      &kp G        &msc MB3       &moHyUn          &kp H     &kp J        &kp K      &kp L    &moColon
+&kp LSHIFT  &kp Z         &kp X         &kp C      &kp V        &kp B          &kp PRINTSCREEN  &kp N     &kp M        &kp COMMA  &kp DOT  &moSlash
+&kp LCTRL   &kp LWIN      &kp LALT      &lt 1 TAB  &kp SPACE    &kp LSHIFT                      &lt 3 F2  &lt 2 ENTER                      &moExQu
             >;
 
             sensor-bindings =
@@ -399,10 +403,10 @@
 
         layer_1 {
             bindings = <
-&kp COMMA       &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &none                                    &kp LS(N4)        &kp LS(N8)   &kp LS(N9)    &kp RBKT         &kp NUHS
-&kp KP_DOT      &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &none            &none    &kp LS(EQUAL)  &kp LS(MINUS)     &kp KP_PLUS  &kp KP_MINUS  &kp KP_MULTIPLY  &moSlash
-&kp LEFT_SHIFT  &kp KP_NUMBER_0  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &none    &none          &kp LS(N6)        &kp LS(N3)   &kp LBKT      &kp EQUAL        &kp LS(N5)
-&kp LCTRL       &kp LEFT_GUI     &kp LEFT_ALT     &none            &none            &none                   &moQote           &moHyUn                                     &kp PIPE
+&kp COMMA   &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &none                                     &kp JP_HASH       &kp JP_DOLLAR  &kp JP_PARCENT  &kp JP_AMPERSAND  &kp JP_CARET
+&kp KP_DOT  &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &none            &none      &moHyUn       &kp JP_AT         &kp JP_LPAREN  &kp JP_RPAREN   &kp JP_LBRACKET   &kp JP_RBRACKET
+&kp LSHIFT  &kp KP_NUMBER_0  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &none      &kp JP_TILDE  &kp JP_EQUAL      &kp KP_PLUS    &kp KP_MINUS    &kp KP_MULTIPLY   &moSlash
+&kp LCTRL   &kp LGUI         &kp LALT         &none            &none            &kp LSHIFT               &kp JP_BACKQUOTE  &moQote                                          &moExQu
             >;
 
             sensor-bindings = <&scroll_up_down>;
@@ -410,10 +414,10 @@
 
         layer_2 {
             bindings = <
-&kp LC(Q)       &kp LC(W)     &kp LC(E)     &kp LC(R)  &kp LC(T)                       &kp LC(Y)  &kp PAGE_UP     &kp UP_ARROW    &kp PAGE_DOWN    &kp LC(P)
-&kp LC(A)       &kp LC(S)     &kp LC(D)     &kp LC(F)  &kp LC(G)  &none        &none   &none      &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp K_APP
-&kp LEFT_SHIFT  &moZCtrlY     &kp LC(X)     &kp LC(C)  &kp LC(V)  &kp LC(B)    &none   &none      &none           &kp HOME        &kp END          &none
-&kp LCTRL       &kp LEFT_WIN  &kp LEFT_ALT  &none      &kp LG(V)  &none                &none      &none                                            &none
+&kp LC(Q)   &kp LC(W)  &kp LC(E) &kp LC(R)  &kp LC(T)                       &kp LC(Y)  &kp PAGE_UP     &kp UP_ARROW    &kp PAGE_DOWN    &kp LC(P)
+&kp LC(A)   &kp LC(S)  &kp LC(D) &kp LC(F)  &kp LC(G)  &none        &none   &kp LC(H)  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp K_APP
+&kp LSHIFT  &moZCtrlY  &kp LC(X) &kp LC(C)  &kp LC(V)  &kp LC(B)    &none   &kp LC(N)  &none           &kp HOME        &kp END          &none
+&kp LCTRL   &kp LGUI   &kp LALT  &kp LG(V)  &kp LG(H)  &kp LSHIFT            &none      &none                                            &none
             >;
 
             sensor-bindings = <&scroll_up_down>;
@@ -421,10 +425,10 @@
 
         layer_3 {
             bindings = <
-&kp F1  &kp F2   &kp F3   &kp F4   &kp F5                              &kp F6        &kp F7        &kp F8        &kp F9        &kp F10
-&kp N1  &kp N2   &kp N3   &kp N4   &kp N5   &none      &bt BT_CLR      &kp N6        &kp N7        &kp N8        &kp N9        &kp N0
-&none   &kp F11  &kp F12  &kp F13  &kp F14  &kp F15    &bt BT_CLR_ALL  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
-&none   &none    &none    &none    &none    &none                      &none         &none                                     &none
+&kp F1          &kp F2    &kp F3    &kp F4   &kp F5                                  &kp F6        &kp F7        &kp F8        &kp F9        &kp F10
+&kp N1          &kp N2    &kp N3    &kp N4   &kp N5   &none          &bt BT_CLR      &kp N6        &kp N7        &kp N8        &kp N9        &kp N0
+&kp LSHIFT      &kp F11   &kp F12   &kp F13  &kp F14  &kp F15        &bt BT_CLR_ALL  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
+&kp LCTRL       &kp LGUI  &kp LALT  &none    &none    &kp LSHIFT                     &none         &none                                     &none
             >;
 
             sensor-bindings = <&scroll_up_down>;
