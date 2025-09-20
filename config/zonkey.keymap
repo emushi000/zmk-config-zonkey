@@ -393,7 +393,7 @@
 &kp Q       &kp W         &kp E         &kp R      &kp T                                        &kp Y     &kp U        &kp I      &kp O    &kp P
 &kp A       &kp S         &kp D         &kp F      &kp G        &msc MB3       &moHyUn          &kp H     &kp J        &kp K      &kp L    &moColon
 &kp LSHIFT  &kp Z         &kp X         &kp C      &kp V        &kp B          &kp PRINTSCREEN  &kp N     &kp M        &kp COMMA  &kp DOT  &moSlash
-&kp LCTRL   &kp LWIN      &kp LALT      &lt 1 TAB  &kp SPACE    &LSHIFT                         &lt 3 F2  &lt 2 ENTER                      &moExQu
+&kp LCTRL   &kp LWIN      &kp LALT      &lt 1 TAB  &kp SPACE    &kp LSHIFT                      &lt 3 F2  &lt 2 ENTER                      &moExQu
             >;
 
             sensor-bindings =
@@ -406,7 +406,7 @@
 &kp COMMA   &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &none                                     &kp JP_HASH       &kp JP_DOLLAR  &kp JP_PARCENT  &kp JP_AMPERSAND  &kp JP_CARET
 &kp KP_DOT  &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &none            &none      &moHyUn       &kp JP_AT         &kp JP_LPAREN  &kp JP_RPAREN   &kp JP_LBRACKET   &kp JP_RBRACKET
 &kp LSHIFT  &kp KP_NUMBER_0  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &none      &kp JP_TILDE  &kp JP_EQUAL      &kp KP_PLUS    &kp KP_MINUS    &kp KP_MULTIPLY   &moSlash
-&kp LCTRL   &kp LGUI         &kp LALT         &none            &none            &LSHIFT                  &kp JP_BACKQUOTE  &moQote                                          &moExQu
+&kp LCTRL   &kp LGUI         &kp LALT         &none            &none            &kp LSHIFT               &kp JP_BACKQUOTE  &moQote                                          &moExQu
             >;
 
             sensor-bindings = <&scroll_up_down>;
@@ -417,7 +417,7 @@
 &kp LC(Q)   &kp LC(W)  &kp LC(E) &kp LC(R)  &kp LC(T)                       &kp LC(Y)  &kp PAGE_UP     &kp UP_ARROW    &kp PAGE_DOWN    &kp LC(P)
 &kp LC(A)   &kp LC(S)  &kp LC(D) &kp LC(F)  &kp LC(G)  &none        &none   &kp LC(H)  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp K_APP
 &kp LSHIFT  &moZCtrlY  &kp LC(X) &kp LC(C)  &kp LC(V)  &kp LC(B)    &none   &kp LC(N)  &none           &kp HOME        &kp END          &none
-&kp LCTRL   &kp LGUI   &kp LALT  &kp LG(V)  &kp LG(H)  &kp LG(B)            &none      &none                                            &none
+&kp LCTRL   &kp LGUI   &kp LALT  &kp LG(V)  &kp LG(H)  &kp LSHIFT            &none      &none                                            &none
             >;
 
             sensor-bindings = <&scroll_up_down>;
@@ -428,7 +428,7 @@
 &kp F1          &kp F2    &kp F3    &kp F4   &kp F5                                  &kp F6        &kp F7        &kp F8        &kp F9        &kp F10
 &kp N1          &kp N2    &kp N3    &kp N4   &kp N5   &none          &bt BT_CLR      &kp N6        &kp N7        &kp N8        &kp N9        &kp N0
 &kp LSHIFT      &kp F11   &kp F12   &kp F13  &kp F14  &kp F15        &bt BT_CLR_ALL  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
-&kp LCTRL       &kp LGUI  &kp LALT  &none    &none    &LSHIFT                        &none         &none                                     &none
+&kp LCTRL       &kp LGUI  &kp LALT  &none    &none    &kp LSHIFT                     &none         &none                                     &none
             >;
 
             sensor-bindings = <&scroll_up_down>;
