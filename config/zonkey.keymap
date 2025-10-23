@@ -44,7 +44,7 @@
 
 / {
     macros {
-        maCtrlScrlUp: ctrl_scroll_up {
+        maCtrlScrlUp: macro_ctrl_scroll_up {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
@@ -54,13 +54,61 @@
                 ;
         };
 
-        maCtrlScrlDown: ctrl_scroll_down {
+        maCtrlScrlDown: macro_ctrl_scroll_down {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
                 = <&macro_press &kp LCTRL>
                 , <&macro_tap &msc SCRL_DOWN >
                 , <&macro_release &kp LCTRL>
+                ;
+        };
+
+        maPars: macro_parenthesis {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_tap &kp JP_LPAREN &kp JP_RPAREN &kp LEFT >
+                ;
+        };
+
+        maBrackets: macro_brackets {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_tap &kp JP_LBRACKET &kp JP_RBRACKET &kp LEFT >
+                ;
+        };
+
+        maBraces: macro_braces {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_tap &kp JP_LBRACE &kp JP_RBRACE &kp LEFT >
+                ;
+        };
+
+        maDQuotes: macro_double_quotes {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_tap &kp JP_DQUOTE &kp JP_DQUOTE &kp LEFT >
+                ;
+        };
+
+        maSQuotes: macro_single_quotes {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_tap &kp JP_QUOTE &kp JP_QUOTE &kp LEFT >
+                ;
+        };
+
+        maBQuotes: macro_back_quotes {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_tap &kp JP_BACKQUOTE &kp JP_BACKQUOTE &kp LEFT >
                 ;
         };
     };
@@ -425,14 +473,14 @@
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&kp LPAR>, <&kp LBKT>, <&kp LBRC>;
+            bindings = <&maPars>, <&maBrackets>, <&maBraces>;
         };
 
         tdQuotes: tap_quotes {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&kp JP_DQUOTE>, <&kp JP_QUOTE>, <&kp JP_BACKQUOTE>;
+            bindings = <&maDQuotes>, <&maSQuotes>, <&maBQuotes>;
         };
 
          keymap {
