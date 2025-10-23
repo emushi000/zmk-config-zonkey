@@ -43,6 +43,30 @@
 };
 
 / {
+    macros {
+        ctrlScrlUp: ctrl_scroll_up {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LCTRL>
+                , <&macro_tap &msc SCRL_UP >
+                , <&macro_release &kp LCTRL>
+                ;
+        };
+    };
+
+    macros {
+        ctrlScrlDown: ctrl_scroll_down {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LCTRL>
+                , <&macro_tap &msc SCRL_DOWN >
+                , <&macro_release &kp LCTRL>
+                ;
+        };
+    };
+
     behaviors {
         combos {
             compatible = "zmk,combos";
@@ -446,7 +470,7 @@
 
          layer_3 {
              bindings = <
-                       &tdBrackets &mo7     &mo8    &mo9      &tdOpes1              &tdSymbols1  &ctrlScrlUp     &kp SCRL_UP     &ctrlScrlUp        &kp LG(p)
+                       &tdBrackets &mo7     &mo8    &mo9      &tdOpes1              &tdSymbols1  &ctrlScrlUp     &kp SCRL_UP     &ctrlScrlDown        &kp LG(p)
                        &kp KP_DOT  &mo4     &mo5    &mo6      &tdOpes2      &trans  &tdSymbols2  &msc SCRL_LEFT  &msc SCRL_DOWN  &msc SCRL_RIGHT    &kp LG(LC(t))
              &trans    &mo0        &mo1     &mo2    &mo3      &tdBits       &trans  &quotes      &kp F21         &kp F22         &kp F23            &kp F24
              &trans    &trans      &trans   &trans  &trans    &trans        &trans  &trans                                                          &trans
