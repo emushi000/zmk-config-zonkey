@@ -44,7 +44,7 @@
 
 / {
     macros {
-        ctrlScrlUp: ctrl_scroll_up {
+        maCtrlScrlUp: ctrl_scroll_up {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
@@ -54,7 +54,7 @@
                 ;
         };
 
-        ctrlScrlDown: ctrl_scroll_down {
+        maCtrlScrlDown: ctrl_scroll_down {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
@@ -446,11 +446,11 @@
 
         layer_1 {
             bindings = <
-                        &tdBrackets  &mo7    &mo8     &mo9       &tdOpes1                        &tdSymbols1  &moPgTabUp   &kp UP    &moPgTabDown   &kp JP_AT
-                        &kp KP_DOT   &mo4    &mo5     &mo6       &tdOpes2       &trans  &trans   &tdSymbols2  &kp LEFT     &kp DOWN  &kp RIGHT      &kp K_APP
-            &trans      &mo0         &mo1    &mo2     &mo3       &tdBits                &trans   &tdQuotes    &kp F15      &kp HOME  &kp END        &trans
-            &trans      &trans       &trans  &trans  &trans  &trans          &trans   &trans                                          &trans
-            // &trans      &trans       &trans  &kp F14  &kp LG(V)  &kp LS(SPACE)          &trans   &kp LG(H)                                          &trans
+                        &tdBrackets  &mo7    &mo8     &mo9      &tdOpes1                          &tdSymbols1  &moPgTabUp   &kp UP    &moPgTabDown   &kp JP_AT
+                        &kp KP_DOT   &mo4    &mo5     &mo6       &tdOpes2        &trans  &trans   &tdSymbols2  &kp LEFT     &kp DOWN  &kp RIGHT      &kp K_APP
+            &trans      &mo0         &mo1    &mo2     &mo3       &tdBits                 &trans   &tdQuotes    &kp F15      &kp HOME  &kp END        &trans
+            &trans      &trans       &trans  &trans   &trans     &trans                  &trans   &trans                                             &trans
+            // &trans   &trans       &trans  &kp F14  &kp LG(V)  &kp LS(SPACE)           &trans   &kp LG(H)                                          &trans
             >;
 
             sensor-bindings = <&scroll_up_down>;
@@ -460,8 +460,8 @@
             bindings = <
                       &kp F12  &kp F7  &kp F9  &trans  &trans                  &trans  &trans  &trans  &trans  &trans
                       &kp F10  &kp F4  &kp F6  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-            &trans    &trans   &kp F1  &kp F2  &trans  &trans          &trans  &trans  &trans  &trans  &trans  &trans
-            &trans    &trans   &kp F1  &kp F2  &trans  &trans          &trans  &trans                          &trans
+            &trans    &trans   &kp F1  &kp F2  &trans  &trans          &trans  &trans  &trans  &trans  &trans  &maCtrlScrlUp
+            &trans    &trans   &kp F1  &kp F2  &trans  &trans          &trans  &trans                          &kp LG(P)
             >;
 
             sensor-bindings = <&scroll_up_down>;
@@ -469,10 +469,10 @@
 
          layer_3 {
              bindings = <
-                       &tdBrackets &mo7     &mo8    &mo9      &tdOpes1              &tdSymbols1  &ctrlScrlUp     &kp SCRL_UP     &ctrlScrlDown        &kp LG(p)
-                       &kp KP_DOT  &mo4     &mo5    &mo6      &tdOpes2      &trans  &tdSymbols2  &msc SCRL_LEFT  &msc SCRL_DOWN  &msc SCRL_RIGHT    &kp LG(LC(t))
-             &trans    &mo0        &mo1     &mo2    &mo3      &tdBits       &trans  &quotes      &kp F21         &kp F22         &kp F23            &kp F24
-             &trans    &trans      &trans   &trans  &trans    &trans        &trans  &trans                                                          &trans
+                       &tdBrackets &mo7     &mo8    &mo9      &tdOpes1                  &tdSymbols1  &maCtrlScrlUp   &kp SCRL_UP     &maCtrlScrlDown    &kp LG(P)
+                       &kp KP_DOT  &mo4     &mo5    &mo6      &tdOpes2  &trans  &trans  &tdSymbols2  &msc SCRL_LEFT  &msc SCRL_DOWN  &msc SCRL_RIGHT    &kp LG(LC(T))
+             &trans    &mo0        &mo1     &mo2    &mo3      &tdBits           &trans  &quotes      &kp F21         &kp F22         &kp F23            &kp F24
+             &trans    &trans      &trans   &trans  &trans    &trans            &trans  &trans                                                          &trans
              >;
 
              sensor-bindings = <&scroll_up_down>;
