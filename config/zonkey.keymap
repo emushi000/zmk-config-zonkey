@@ -356,7 +356,7 @@
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&kp KP_PLUS>, <&kp KP_MINUS>, <&kp KP_MULTIPLY>, <&kp KP_SLASH">;
+            bindings = <&kp KP_PLUS>, <&kp KP_MINUS>, <&kp KP_MULTIPLY>, <&kp KP_SLASH>;
         };
 
         tdBits: tap_bit_operators {
