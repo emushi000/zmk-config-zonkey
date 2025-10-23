@@ -424,7 +424,7 @@
         layer_1 {
             bindings = <
                         &tdBrackets  &mo7    &mo8  &mo9       &tdOpes1                        &tdSymbols1  &moPgTabUp   &kp UP    &moPgTabDown   &kp JP_AT
-                        &kp KP_DOT   &mo4    &mo5  &mo6       &tdOpes2       &trans  &trans   &tdSymbols2  &kp LEFT     &kp DOWN  &kp ARROW      &kp K_APP
+                        &kp KP_DOT   &mo4    &mo5  &mo6       &tdOpes2       &trans  &trans   &tdSymbols2  &kp LEFT     &kp DOWN  &kp RIGHT      &kp K_APP
             &trans      &mo0         &mo1    &mo2  &mo3       &tdBits                &trans   &tdQuotes    &kp F15      &kp HOME  &kp END        &kp trans
             &trans      &kp trans    &trans  &F14  &kp LG(v)  &kp LS(SPACE)          &trans   &kp LG(h)                                          &trans
             >;
