@@ -338,6 +338,24 @@
             label = "MOCOLON";
         };
 
+        moPgTabUp: moPgTabUp {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp PAGE_UP>, <&kp LC(TAB)>;
+
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            label = "MOPGTABUP";
+        };
+
+        moPgTabDown: moPgTabDown {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp PAGE_DOWN>, <&kp LC(LS(TAB))>;
+
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            label = "MOPGTABDOWN";
+        };
+
         tdSca: tap_shift_control_alt {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
@@ -393,7 +411,7 @@
         default_layer {
             bindings = <
                         &kp Q  &kp W     &kp E            &kp R          &kp T                          &kp Y      &kp U  &kp I      &kp O    &kp P
-                        &kp A  &kp S     &kp D            &kp F          &kp G  &msc MB3   &kp DELETE   &kp H      &kp J  &kp K      &kp L    &mo moColon
+                        &kp A  &kp S     &kp D            &kp F          &kp G  &msc MB3   &kp DELETE   &kp H      &kp J  &kp K      &kp L    &moColon
             &kp BSPC    &kp Z  &kp X     &kp C            &kp V          &kp B             &kp ESC      &kp N      &kp M  &kp COMMA  &kp DOT  &kp SLASH
             &td tdSca   &none  &kp LGUI  &lt 3 JP_HANZEN  &mt LCTRL TAB  &mt LSHIFT SPACE  &mt 1 ENTER  &mt 2 F13                             &kp JP_YEN
             >;
@@ -405,10 +423,10 @@
 
         layer_1 {
             bindings = <
-                        &td tdBrackets  &mo mo7  &mo mo8  &mo mo9    &td tdOpes1                   &td tdSymbols1  &mo pgTabUp  &kp UP    &mo pgTabDown  &kp JP_AT
-                        &kp KP_DOT      &mo mo4  &mo mo5  &mo mo6    &td tdOpes2  &trans  &tran    &td tdSymbols2  &kp LEFT     &kp DOWN  &kp ARROW      &kp K_APP
-            &trans      &mo mo0         &mo mo1  &mo mo2  &mo mo3    &td tdBits           &trans   &td tdQuotes    &kp F15      &kp HOME  &kp END        &kp trans
-            &trans      &kp trans       &trans   &F14     &kp LG(v)  &kp LS(SPACE)        &trans   &kp LG(h)                                             &trans
+                        &td tdBrackets  &mo7    &mo8  &mo9       &td tdOpes1                   &td tdSymbols1  &moPgTabUp   &kp UP    &moPgTabDown   &kp JP_AT
+                        &kp KP_DOT      &mo4    &mo5  &mo6       &td tdOpes2  &trans  &tran    &td tdSymbols2  &kp LEFT     &kp DOWN  &kp ARROW      &kp K_APP
+            &trans      &mo0            &mo1    &mo2  &mo3       &td tdBits           &trans   &td tdQuotes    &kp F15      &kp HOME  &kp END        &kp trans
+            &trans      &kp trans       &trans  &F14  &kp LG(v)  &kp LS(SPACE)        &trans   &kp LG(h)                                             &trans
             >;
 
             sensor-bindings = <&scroll_up_down>;
