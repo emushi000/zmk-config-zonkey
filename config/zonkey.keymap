@@ -428,6 +428,14 @@
             bindings = <&kp LPAR>, <&kp LBKT>, <&kp LBRC>;
         };
 
+        tdQuotes: tap_quotes {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp JP_DQUOTE>, <&kp JP_QUOTE>, <&kp JP_BACKQUOTE>;
+        };
+
+
     keymap {
         compatible = "zmk,keymap";
 
