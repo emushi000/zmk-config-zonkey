@@ -185,7 +185,7 @@
         mo5: mo5 {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&kp N5>, <&kp JP_PARCENT>;
+            bindings = <&kp N5>, <&kp JP_PERCENT>;
 
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
