@@ -43,27 +43,27 @@
 };
 
 / {
-    macros {
-        maCtrlScrlUp: ctrl_scroll_up {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings
-                = <&macro_press &kp LCTRL>
-                , <&macro_tap &msc SCRL_UP >
-                , <&macro_release &kp LCTRL>
-                ;
-        };
-
-        maCtrlScrlDown: ctrl_scroll_down {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings
-                = <&macro_press &kp LCTRL>
-                , <&macro_tap &msc SCRL_DOWN >
-                , <&macro_release &kp LCTRL>
-                ;
-        };
-    };
+//    macros {
+//        maCtrlScrlUp: ctrl_scroll_up {
+//            compatible = "zmk,behavior-macro";
+//            #binding-cells = <0>;
+//            bindings
+//                = <&macro_press &kp LCTRL>
+//                , <&macro_tap &msc SCRL_UP >
+//                , <&macro_release &kp LCTRL>
+//                ;
+//        };
+//
+//        maCtrlScrlDown: ctrl_scroll_down {
+//            compatible = "zmk,behavior-macro";
+//            #binding-cells = <0>;
+//            bindings
+//                = <&macro_press &kp LCTRL>
+//                , <&macro_tap &msc SCRL_DOWN >
+//                , <&macro_release &kp LCTRL>
+//                ;
+//        };
+//    };
 
 
     behaviors {
@@ -467,15 +467,15 @@
             sensor-bindings = <&scroll_up_down>;
         };
 
-        layer_3 {
-            bindings = <
-                    &tdBrackets &mo7     &mo8    &mo9      &tdOpes1                  &tdSymbols1  &maCtrlScrlUp   &kp SCRL_UP     &maCtrlScrlDown    &kp LG(P)
-                    &kp KP_DOT  &mo4     &mo5    &mo6      &tdOpes2  &trans  &trans  &tdSymbols2  &msc SCRL_LEFT  &msc SCRL_DOWN  &msc SCRL_RIGHT    &kp LG(LC(T))
-            &trans  &mo0        &mo1     &mo2    &mo3      &tdBits           &trans  &quotes      &kp F21         &kp F22         &kp F23            &kp F24
-            &trans  &trans      &trans   &trans  &trans    &trans            &trans  &trans                                                          &trans
-            >;
-
-             sensor-bindings = <&scroll_up_down>;
+//        layer_3 {
+//            bindings = <
+//                    &tdBrackets &mo7     &mo8    &mo9      &tdOpes1                  &tdSymbols1  &maCtrlScrlUp   &kp SCRL_UP     &maCtrlScrlDown    &kp LG(P)
+//                    &kp KP_DOT  &mo4     &mo5    &mo6      &tdOpes2  &trans  &trans  &tdSymbols2  &msc SCRL_LEFT  &msc SCRL_DOWN  &msc SCRL_RIGHT    &kp LG(LC(T))
+//            &trans  &mo0        &mo1     &mo2    &mo3      &tdBits           &trans  &quotes      &kp F21         &kp F22         &kp F23            &kp F24
+//            &trans  &trans      &trans   &trans  &trans    &trans            &trans  &trans                                                          &trans
+//            >;
+//
+//             sensor-bindings = <&scroll_up_down>;
         };
     };
 };
