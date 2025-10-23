@@ -43,27 +43,27 @@
 };
 
 / {
-//    macros {
-//        maCtrlScrlUp: ctrl_scroll_up {
-//            compatible = "zmk,behavior-macro";
-//            #binding-cells = <0>;
-//            bindings
-//                = <&macro_press &kp LCTRL>
-//                , <&macro_tap &msc SCRL_UP >
-//                , <&macro_release &kp LCTRL>
-//                ;
-//        };
-//
-//        maCtrlScrlDown: ctrl_scroll_down {
-//            compatible = "zmk,behavior-macro";
-//            #binding-cells = <0>;
-//            bindings
-//                = <&macro_press &kp LCTRL>
-//                , <&macro_tap &msc SCRL_DOWN >
-//                , <&macro_release &kp LCTRL>
-//                ;
-//        };
-//    };
+    macros {
+        maCtrlScrlUp: ctrl_scroll_up {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LCTRL>
+                , <&macro_tap &msc SCRL_UP >
+                , <&macro_release &kp LCTRL>
+                ;
+        };
+
+        maCtrlScrlDown: ctrl_scroll_down {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LCTRL>
+                , <&macro_tap &msc SCRL_DOWN >
+                , <&macro_release &kp LCTRL>
+                ;
+        };
+    };
 
 
     behaviors {
