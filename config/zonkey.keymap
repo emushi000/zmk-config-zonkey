@@ -398,7 +398,7 @@
             bindings = <&kp JP_UNDERSCORE>, <&kp JP_TILDE>;
         };
 
-        tdBracketPairs: tap_bracket_pairs {
+        tdBrackets: tap_bracket_pairs {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
@@ -413,7 +413,7 @@
                         &kp Q  &kp W     &kp E            &kp R          &kp T                          &kp Y      &kp U  &kp I      &kp O    &kp P
                         &kp A  &kp S     &kp D            &kp F          &kp G  &msc MB3   &kp DELETE   &kp H      &kp J  &kp K      &kp L    &moColon
             &kp BSPC    &kp Z  &kp X     &kp C            &kp V          &kp B             &kp ESC      &kp N      &kp M  &kp COMMA  &kp DOT  &kp SLASH
-            &td tdSca   &none  &kp LGUI  &lt 3 JP_HANZEN  &mt LCTRL TAB  &mt LSHIFT SPACE  &mt 1 ENTER  &mt 2 F13                             &kp JP_YEN
+            &tdSca      &none  &kp LGUI  &lt 3 JP_HANZEN  &mt LCTRL TAB  &mt LSHIFT SPACE  &lt 1 ENTER  &lt 2 F13                             &kp JP_YEN
             >;
 
             sensor-bindings =
@@ -423,32 +423,32 @@
 
         layer_1 {
             bindings = <
-                        &td tdBrackets  &mo7    &mo8  &mo9       &td tdOpes1                   &td tdSymbols1  &moPgTabUp   &kp UP    &moPgTabDown   &kp JP_AT
-                        &kp KP_DOT      &mo4    &mo5  &mo6       &td tdOpes2  &trans  &tran    &td tdSymbols2  &kp LEFT     &kp DOWN  &kp ARROW      &kp K_APP
-            &trans      &mo0            &mo1    &mo2  &mo3       &td tdBits           &trans   &td tdQuotes    &kp F15      &kp HOME  &kp END        &kp trans
-            &trans      &kp trans       &trans  &F14  &kp LG(v)  &kp LS(SPACE)        &trans   &kp LG(h)                                             &trans
+                        &tdBrackets  &mo7    &mo8  &mo9       &tdOpes1                   &tdSymbols1  &moPgTabUp   &kp UP    &moPgTabDown   &kp JP_AT
+                        &kp KP_DOT   &mo4    &mo5  &mo6       &tdOpes2  &trans  &tran    &tdSymbols2  &kp LEFT     &kp DOWN  &kp ARROW      &kp K_APP
+            &trans      &mo0         &mo1    &mo2  &mo3       &tdBits           &trans   &tdQuotes    &kp F15      &kp HOME  &kp END        &kp trans
+            &trans      &kp trans    &trans  &F14  &kp LG(v)  &kp LS(SPACE)     &trans   &kp LG(h)                                          &trans
             >;
 
             sensor-bindings = <&scroll_up_down>;
         };
 
-//        layer_2 {
-//            bindings = <
-//                      &kp F12  &kp F7  &kp F9  &trans                  &trans  &trans  &trans  &trans  &trans
-//                      &kp F10  &kp F4  &kp F6  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-//            &trans    &trans   &kp F1  &kp F2  &trans          &trans  &trans  &trans  &trans  &trans  &trans
-//            &trans    &trans   &kp F1  &kp F2  &trans          &trans  &trans                  &trans
-//            >;
-//
-//            sensor-bindings = <&scroll_up_down>;
-//        };
+        layer_2 {
+            bindings = <
+                      &kp F12  &kp F7  &kp F9  &trans                  &trans  &trans  &trans  &trans  &trans
+                      &kp F10  &kp F4  &kp F6  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+            &trans    &trans   &kp F1  &kp F2  &trans          &trans  &trans  &trans  &trans  &trans  &trans
+            &trans    &trans   &kp F1  &kp F2  &trans          &trans  &trans                  &trans
+            >;
+
+            sensor-bindings = <&scroll_up_down>;
+        };
 
 //         layer_3 {
 //             bindings = <
-//                       &td brackets   &mo mo7     &mo mo8       &mo mo9      &td operators1             &td symbols1    &ctrlScrlUp     &kp SCRL_UP     &ctrlScrlUp        &kp LG(p)
-//                       &kp KP_DOT     &mo mo4     &mo mo5       &mo mo6      &td operators2     &trans  &td symbols2    &msc SCRL_LEFT  &msc SCRL_DOWN  &msc SCRL_RIGHT    &kp LG(LC(t))
-//             &trans    &mo mo0        &mo mo1     &mo mo2       &mo mo3      &td bits                   &td quotes      &kp F21         &kp F22         &kp F23            &kp F24
-//             &trans    &kp trans      &trans      &trans        &trans       &trans                     &trans          &trans                                             &trans
+//                       &tdBrackets &mo7     &mo8    &mo9      &tdOpes1              &tdSymbols1  &ctrlScrlUp     &kp SCRL_UP     &ctrlScrlUp        &kp LG(p)
+//                       &kp KP_DOT  &mo4     &mo5    &mo6      &tdOpes2      &trans  &tdSymbols2  &msc SCRL_LEFT  &msc SCRL_DOWN  &msc SCRL_RIGHT    &kp LG(LC(t))
+//             &trans    &mo0        &mo1     &mo2    &mo3      &tdBits       &trans  &quotes      &kp F21         &kp F22         &kp F23            &kp F24
+//             &trans    &kp trans   &trans   &trans  &trans    &trans        &trans  &trans                                                          &trans
 //             >;
 //
 //             sensor-bindings = <&scroll_up_down>;
