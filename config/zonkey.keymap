@@ -349,7 +349,7 @@
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&kp JP_EQUAL>, <&kp JP_EXCLAMATION>, <&kp JP_QUESTION>>;
+            bindings = <&kp JP_EQUAL>, <&kp JP_EXCLAMATION>, <&kp JP_QUESTION>;
         };
 
         tdOpes2: tap_operators2 {
