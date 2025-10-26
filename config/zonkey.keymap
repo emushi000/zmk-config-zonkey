@@ -454,7 +454,7 @@
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&kp LALT>, <&kp LS(LALT)>, <&kp LC(LALT)>>;
+            bindings = <&kp LALT>, <&kp LS(LALT)>, <&kp LC(LALT)>;
         };
 
          keymap {
