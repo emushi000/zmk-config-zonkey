@@ -362,17 +362,17 @@
         };
 
         // new behavior
-        moColon: moColon {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp JP_COLON>, <&kp SEMI>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-
         moL2Colon: moL2Colon {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&lt 2 COMMA>, <&kp SEMI>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        moComTil: moComTil {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp COMMA>, <&kp JP_TILDE>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
