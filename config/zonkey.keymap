@@ -456,7 +456,7 @@
         moBslSp: moBslSp {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&kp JP_BSLH>, <&kp SL(SPACE)>;
+            bindings = <&kp JP_BSLH>, <&kp LS(SPACE)>;
             mods = <(MOD_LCTL|MOD_RCTL)>;
         };
 
