@@ -71,7 +71,7 @@
                 = <&macro_tap &kp JP_BACKQUOTE &kp C &kp A &kp L>
                 ;
         };
-
+    };
     behaviors {
         combos {
             compatible = "zmk,combos";
