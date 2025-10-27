@@ -407,22 +407,40 @@
             label = "MOPGTABDOWN";
         };
 
-        moBrsChild: moBrsChild {
+        moLBrsChild: moLBrsChild {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp JP_LPAREN>, <&kp JP_LBRACKET>;
 
             mods = <(MOD_LSFT|MOD_RSFT)>;
-            label = "MOBRSCHILD";
+            label = "MOLBRSCHILD";
         };
 
-        moBrs: moBrs {
+        moLBrs: moLBrs {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&moBrsChild>, <&kp JP_LBRACE>;
 
             mods = <(MOD_LCTL|MOD_RCTL)>;
-            label = "MOBRS";
+            label = "MOLBRS";
+        };
+
+        moRBrsChild: moLRrsChild {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp JP_RPAREN>, <&kp JP_RBRACKET>;
+
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            label = "MORBRSCHILD";
+        };
+
+        moRBrs: moRBrs {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&moBrsChild>, <&kp JP_RBRACE>;
+
+            mods = <(MOD_LCTL|MOD_RCTL)>;
+            label = "MORBRS";
         };
 
         moQuotesChild: moQuotesChild {
@@ -487,7 +505,7 @@
                                            &kp F12        &kp F7         &kp F8         &kp F9         &trans                                      &bt BT_CLR      &maCScrlUp      &msc SCRL_UP    &maCScrlDown     &kp F23
                                            &kp F11        &kp F4         &kp F5         &kp F6         &trans             &trans    &trans         &bt BT_CLR_ALL  &msc SCRL_LEFT  &msc SCRL_DOWN  &msc SCRL_RIGHT  &kp F24
                             &trans         &kp F10        &kp F1         &kp F2         &kp F3         &trans                       &trans         &bt BT_SEL 0    &bt BT_SEL 1    &bt BT_SEL 2    &bt BT_SEL 3     &bt BT_SEL 4
-                            &kp LG(LS(R))  &kp LG(LS(T))  &kp LG(LS(R))  &kp LG(LS(S))  &kp LG(LS(S))  &kp LG(LS(SPACE))            &kp LG(LC(T))  &trans                                                           &bt trans
+                                           &kp LG(LS(R))  &kp LG(LS(T))  &kp LG(LS(R))  &kp LG(LS(S))  &kp LG(LS(SPACE))            &kp LG(LC(T))  &trans                                                           &trans
                 >;
                 sensor-bindings = <&scroll_up_down>;
             };
