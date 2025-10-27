@@ -365,7 +365,7 @@
         moL2Colon: moL2Colon {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&lt 2 COMMA>, <&kp SEMI>;
+            bindings = <&lt 2 JP_COLON>, <&kp SEMI>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
